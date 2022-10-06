@@ -40,8 +40,9 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.listen(1999, () => {
-  console.log("port 1999");
+var port = process.env.PORT || 1337;
+app.listen(port, () => {
+  console.log("port :" + port);
 });
 
 var MongoClient = require("mongodb").MongoClient;
